@@ -1,0 +1,1 @@
+Input				Damage				Guard				Startup				Active				Recovery				On-Block				On-Hit				Level				Counter Type				Invuln				Proration				R․I․S․C․ Gain				R․I․S․C․ Loss
