@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="GuiltyGearAPI.tests/GuiltyGearAPI.tests.csproj" />
   <Project Path="GuiltyGearAPI/GuiltyGearAPI.csproj" />
 </Solution>
