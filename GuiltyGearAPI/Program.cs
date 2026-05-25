@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using AngleSharp;
 using AngleSharp.Dom;
+using System.Text.Json;
 class Program
 {
 
@@ -12,7 +13,7 @@ class Program
         Helpers helper = new Helpers();
 
         string BASEURL = "https://www.dustloop.com/w/GGST";
-        string character = "Unika";
+        string character = "Lucy";
         string tempURL = $"{BASEURL}/{character}/Frame_Data";
 
         var config = Configuration.Default.WithDefaultLoader();
@@ -29,10 +30,13 @@ class Program
             var body = table.QuerySelector("tbody")!;
 
             var jsonTable = helper.tableToJson(body,head);
-            System.Console.WriteLine(jsonTable);
-            jsonTables.Append(jsonTable);
+            jsonTables.Add(jsonTable);
 
         }
+        var test = JsonSerializer.Deserialize<List<Move>>(jsonTables[0]);
+
+        System.Console.WriteLine(test.Find(move => move.Input == "5P").Damage);
+        
 
 
 
