@@ -2,19 +2,11 @@ using AngleSharp.Dom;
 using System.Globalization;
 using System.Text.Json;
 
-class Helpers
+class FrameData
 {
-    public void printTable(IElement table)
-    {   
-        var rows = table.QuerySelectorAll("tr");
-
-        foreach (var row in rows)
-        {
-            Console.WriteLine(row.TextContent.Trim());
-        }
-    }
-
-    public string tableToJson(IElement tableBody, IElement tableHead)
+    // Input CharacterName
+    // Output json frame data
+    public string frameDataTableToJson(IElement tableBody, IElement tableHead)
     {
         var moves = new List<Dictionary<string,string>>();
         var headTags = tableHead.QuerySelectorAll("th").Select(th => th.TextContent.Trim()).Where(th => th != "").ToArray();
