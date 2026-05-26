@@ -18,11 +18,8 @@ class Helpers
     {
         var moves = new List<Dictionary<string,string>>();
         var headTags = tableHead.QuerySelectorAll("th").Select(th => th.TextContent.Trim()).Where(th => th != "").ToArray();
-        // If headtags is == 14 then its a normal move, if not its a specialMove/other
 
         var rows = tableBody.QuerySelectorAll("tr");
-        // System.Console.WriteLine(headTags.Count());
-        // System.Console.WriteLine(rows.Count());
         foreach (var row in rows)
         {
             var move = new Dictionary<string, string>();

@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="GuiltyGearAPI.tests/GuiltyGearAPI.tests.csproj" />
-  <Project Path="GuiltyGearAPI/GuiltyGearAPI.csproj" />
+  <Project Path="GuiltyGearScraper.tests/GuiltyGearScraper.tests.csproj" />
+  <Project Path="GuiltyGearScraper/GuiltyGearScraper.csproj" />
 </Solution>
