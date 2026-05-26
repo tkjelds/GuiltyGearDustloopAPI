@@ -8,6 +8,7 @@ class FrameData
     // Output json frame data
     public string frameDataTableToJson(IElement tableBody, IElement tableHead)
     {
+        
         var moves = new List<Dictionary<string,string>>();
         var headTags = tableHead.QuerySelectorAll("th").Select(th => th.TextContent.Trim()).Where(th => th != "").ToArray();
 

@@ -56,9 +56,9 @@ public class Scraper
 
         var document = await LoadDocumentAsync("Combos",character);
 
-        var tables = document.QuerySelectorAll(".wikitable");
+        var comboTables = document.QuerySelectorAll(".wikitable");
 
-        var jsonContent = Combos.ComboTableToJson(tables);
+        var jsonContent = Combos.ComboTableToJson(comboTables);
 
         return new FrameDataResult(character,jsonContent);
     }
