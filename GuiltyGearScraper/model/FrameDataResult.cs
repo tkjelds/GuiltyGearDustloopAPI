@@ -1,8 +1,8 @@
 public class FrameDataResult
 {
-    public string Character { get; set; }
-    public DateTime ScrapedAt { get; set; }
-    public string JsonContent { get; set; }
+    public string Character { get;}
+    public DateTime ScrapedAt { get;}
+    public string JsonContent { get;}
 
     public FrameDataResult(string character, string jsonContent)
     {

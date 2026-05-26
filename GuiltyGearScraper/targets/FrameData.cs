@@ -17,13 +17,12 @@ class FrameData
             var move = new Dictionary<string, string>();
             var moveData = row.QuerySelectorAll("td").Select(td => td.TextContent.Trim()).Skip(1).ToArray();
 
+            for (int i = 0; i < headTags.Count(); i++)
+{
+                move[headTags[i]] = moveData[i];
+            }
 
-                for (int i = 0; i < headTags.Count(); i++)
-    {
-                    move[headTags[i]] = moveData[i];
-                }
-
-                moves.Add(move);
+            moves.Add(move);
         }
         return JsonSerializer.Serialize(moves);
     }

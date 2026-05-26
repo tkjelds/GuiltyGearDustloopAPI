@@ -10,8 +10,11 @@ public class Scraper
 {
     // Targets
     FrameData FrameData = new();
+    Combos Combos = new();
     IBrowsingContext context;
     string BASEURL = "https://www.dustloop.com/w/GGST";
+
+
 
     public Scraper()
     {
@@ -19,26 +22,23 @@ public class Scraper
         context = BrowsingContext.New(config);
     }
 
-    private string BuildURL(string character)
-    {
-        return $"{BASEURL}/{character}/Frame_Data";
-    }
 
-    private async Task<IDocument> LoadDocumentAsync(string character)
+    public async Task<IDocument> LoadDocumentAsync(string endpoint, string character)
     {
-        var url = BuildURL(character);
+        var url = $"{BASEURL}/{character}/{endpoint}";
+
         return await context.OpenAsync(url);
     }
 
     public async Task<FrameDataResult> GetCharacterFrameDataAsync(string character)
     {
-        var document = await LoadDocumentAsync(character);
+        var document = await LoadDocumentAsync("Frame_data",character);
 
         // Frame data tables given the class name cargoDynamicTable
-        var moveTables = document.QuerySelectorAll(".cargoDynamicTable");
+        var framedataTables = document.QuerySelectorAll(".cargoDynamicTable");
 
         var jsonTables = new List<string?>();
-        foreach (var table in moveTables)
+        foreach (var table in framedataTables)
         {
             var head = table.QuerySelector("thead")!;
             var body = table.QuerySelector("tbody")!;
@@ -51,9 +51,16 @@ public class Scraper
         return new FrameDataResult(character,json);
     }
 
-    public async Task<FrameDataResult> GetCharacterCombos(string character)
+    public async Task<FrameDataResult> GetCharacterCombosAsync(string character)
     {
-        return new FrameDataResult("","");
+
+        var document = await LoadDocumentAsync("Combos",character);
+
+        var tables = document.QuerySelectorAll(".wikitable");
+
+        var jsonContent = Combos.ComboTableToJson(tables);
+
+        return new FrameDataResult(character,jsonContent);
     }
 
 }
