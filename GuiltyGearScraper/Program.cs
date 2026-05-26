@@ -1,23 +1,17 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using AngleSharp;
-using AngleSharp.Dom;
-using System.Text.Json;
-using System.Numerics;
-class Program
+﻿class Program
 {
 
 
     static async Task Main(string[] args)
     {
-        Scraper scraper = new();
 
+        Scraper scraper = new();
+        Character[] badCharacters = [Character.May, Character.Baiken, Character.ABA];
         foreach (var character in Character.GetAllCharacters())
         {
-            var fisk = await scraper.GetCharacterCombosAsync(character.Slug);
-            await Task.Delay(2000);
-            System.Console.WriteLine($"Character: {fisk.Character} Length of payload {fisk.JsonContent.Length}");
+            var scrapedData = await scraper.GetCharacterFrameDataAsync(character.Slug);
+            System.Console.WriteLine($"Current character {character.Slug} payload length: {scrapedData.JsonContent.Length}");
+            await Task.Delay(1000);            
         }
     }
 }

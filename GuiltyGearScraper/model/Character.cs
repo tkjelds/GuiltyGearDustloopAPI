@@ -6,32 +6,39 @@ public sealed class Character
     {
         Slug = slug;
     }
-    public static readonly Character Lucy = new("Lucy");
+
+    public static readonly Character Unika = new ("Unika");
+    public static readonly Character Asuka = new("Asuka_R");
+    public static readonly Character Bridget = new("Bridget");
+    public static readonly Character RamlethalValentine = new("Ramlethal_Valentine");
     public static readonly Character SolBadguy = new("Sol_Badguy");
     public static readonly Character KyKiske = new("Ky_Kiske");
     public static readonly Character May = new("May");
+    public static readonly Character LeoWhitefang = new("Leo_Whitefang");
+    public static readonly Character GoldlewisDickinson = new("Goldlewis_Dickinson");
+    public static readonly Character Baiken = new("Baiken");
+    public static readonly Character ElpheltValentine = new("Elphelt_Valentine");
+    public static readonly Character Lucy = new("Lucy");
+    public static readonly Character Dizzy = new ("Queen_Dizzy");
+    public static readonly Character SinKiske = new("Sin_Kiske");
+    public static readonly Character Nagoriyuki = new("Nagoriyuki");
     public static readonly Character AxlLow = new("Axl_Low");
     public static readonly Character ChippZanuff = new("Chipp_Zanuff");
     public static readonly Character Potemkin = new("Potemkin");
+    public static readonly Character Giovanna = new("Giovanna");
+    public static readonly Character JackO = new("Jack-O");
+    public static readonly Character Testament = new("Testament");
+    public static readonly Character ABA = new("A.B.A");
+    public static readonly Character Jam = new("Jam_Kuradoberi");
+    public static readonly Character Venom = new("Venom");
+    public static readonly Character Bedman = new("Bedman");
+    public static readonly Character AnjiMito = new("Anji_Mito");
     public static readonly Character Faust = new("Faust");
     public static readonly Character MilliaRage = new("Millia_Rage");
     public static readonly Character Zato1 = new("Zato-1");
-    public static readonly Character RamlethalValentine = new("Ramlethal_Valentine");
-    public static readonly Character LeoWhitefang = new("Leo_Whitefang");
-    public static readonly Character Nagoriyuki = new("Nagoriyuki");
-    public static readonly Character Giovanna = new("Giovanna");
-    public static readonly Character AnjiMito = new("Anji_Mito");
     public static readonly Character INo = new("I-No");
-    public static readonly Character GoldlewisDickinson = new("Goldlewis_Dickinson");
-    public static readonly Character JackO = new("Jack-O");
     public static readonly Character HappyChaos = new("Happy_Chaos");
-    public static readonly Character Baiken = new("Baiken");
-    public static readonly Character SinKiske = new("Sin_Kiske");
-    public static readonly Character Bridget = new("Bridget");
-    public static readonly Character Asuka = new("Asuka_R");
     public static readonly Character Johnny = new("Johnny");
-    public static readonly Character ElpheltValentine = new("Elphelt_Valentine");
-    public static readonly Character ABA = new("A.B.A");
     public static readonly Character Slayer = new("Slayer");
 
 
@@ -39,6 +46,12 @@ public sealed class Character
     {   
     return
     [
+        Bedman,
+        Venom,
+        Jam,
+        Testament,
+        Dizzy,
+        Unika,
         Lucy,
         SolBadguy,
         KyKiske,

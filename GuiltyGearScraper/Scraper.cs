@@ -30,9 +30,9 @@ public class Scraper
         return await context.OpenAsync(url);
     }
 
-    public async Task<FrameDataResult> GetCharacterFrameDataAsync(string character)
+    public async Task<ScrapeResult> GetCharacterFrameDataAsync(string character)
     {
-        var document = await LoadDocumentAsync("Frame_data",character);
+        var document = await LoadDocumentAsync("Frame_Data",character);
 
         // Frame data tables given the class name cargoDynamicTable
         var framedataTables = document.QuerySelectorAll(".cargoDynamicTable");
@@ -48,19 +48,25 @@ public class Scraper
         }
 
         var json = JsonSerializer.Serialize(jsonTables);
-        return new FrameDataResult(character,json);
+        return new ScrapeResult(character,json);
     }
 
-    public async Task<FrameDataResult> GetCharacterCombosAsync(string character)
+    public async Task<ScrapeResult> GetCharacterCombosAsync(string character)
     {
 
         var document = await LoadDocumentAsync("Combos",character);
 
-        var comboTables = document.QuerySelectorAll(".wikitable");
+        var wikiTables = document.QuerySelectorAll(".wikitable");
 
-        var jsonContent = Combos.ComboTableToJson(comboTables);
+        var comboTables = document.QuerySelectorAll(".comboTable");
+        
+        var wikiTableCombos = Combos.WikiTableToJson(wikiTables);
 
-        return new FrameDataResult(character,jsonContent);
+        var comboTableCombos = Combos.ComboTableToJson(comboTables);
+
+        var allCombos = wikiTableCombos.Concat(comboTableCombos);
+
+        return new ScrapeResult(character,JsonSerializer.Serialize(allCombos));
     }
 
 }
