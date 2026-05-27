@@ -1,0 +1,55 @@
+/Users/tore/projects/GuiltyGearDustloopAPI/GuiltyGearScraper/model/Move.cs(53,49): warning CS8618: Non-nullable property 'UnmatchedFields' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable. [/Users/tore/projects/GuiltyGearDustloopAPI/GuiltyGearScraper/GuiltyGearScraper.csproj]
+/Users/tore/projects/GuiltyGearDustloopAPI/GuiltyGearScraper/Program.cs(26,86): warning CS8602: Dereference of a possibly null reference. [/Users/tore/projects/GuiltyGearDustloopAPI/GuiltyGearScraper/GuiltyGearScraper.csproj]
+Character Bedman. First Combo: AA 6P > 236S
+
+Character Venom. First Combo: Failed to find
+Character Jam_Kuradoberi. First Combo: [5P/2P]xN > 236K
+
+Character Testament. First Combo: 2K > 2D > 236S
+
+Character Queen_Dizzy. First Combo: 2P/5P > 6P > 214S
+
+Character Unika. First Combo: ~5S
+Character Lucy. First Combo: 5P/2PxN > 6P > 214K (whiff)
+
+Character Sol_Badguy. First Combo: 5P > (5P > 5P > 5P) > 236KK
+
+Character Ky_Kiske. First Combo: (2P)*1-3 > 6P > 214S
+
+Character May. First Combo: [5P]x3>3K
+Character Axl_Low. First Combo: 2P or 5P > 214H
+Character Chipp_Zanuff. First Combo: w.X
+Character Potemkin. First Combo: k(XXX)
+Character Faust. First Combo: 5Px1-4 > 2P
+
+Character Millia_Rage. First Combo: 2P (> 2P) > 6P > 236S
+
+Character Zato-1. First Combo: Failed to find
+Character Ramlethal_Valentine. First Combo: (5P > ) 5P > 6P > 623P
+
+Character Leo_Whitefang. First Combo: 5P/2P (> 5P > 5P) > 236S
+
+Character Nagoriyuki. First Combo: 5P > 6P > 214H > OTG 6K > 236K
+
+Character Giovanna. First Combo: Failed to find
+Character Anji_Mito. First Combo: 5P > 6H
+
+Character I-No. First Combo: 5/2P > (2P) > 6P > 236S/214K~6
+
+Character Goldlewis_Dickinson. First Combo: 2P / 5P, (2P) > 684H
+
+Character Jack-O. First Combo: ns.2P
+
+Character Happy_Chaos. First Combo: 2Px2 > H + 66 > c.S > 2D > (Ender)
+
+Character Baiken. First Combo: c.S>5H>41236H~H
+Character Sin_Kiske. First Combo: AA 6P > 236H or 236K (> 66)
+Character Bridget. First Combo: (5K) > 2D > 214S
+
+Character Asuka_R. First Combo: 2P/5P > Howling MetronGuardAll [Guard Crush]Startup11RecoveryTotal 39Advantage+5 [+16], 5K > 6H
+
+Character Johnny. First Combo: PMF
+Character Elphelt_Valentine. First Combo: Failed to find
+Character A.B.A. First Combo: [2P/5P]×2-3>236S~6S
+Character Slayer. First Combo: 5P/2P xN > 236K
+
