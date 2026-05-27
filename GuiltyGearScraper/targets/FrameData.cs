@@ -4,7 +4,7 @@ class FrameData
 {
     // Input CharacterName
     // Output json frame data
-    public List<Dictionary<string,string>> ParseFrameDataTable(IHtmlCollection<IElement>? tables)
+    public static List<Dictionary<string,string>> ParseFrameDataTable(IHtmlCollection<IElement>? tables)
     {
         if(tables == null) return [];
         var moves = new List<Dictionary<string,string>>();

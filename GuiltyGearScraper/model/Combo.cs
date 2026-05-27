@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using AngleSharp.Attributes;
 
 [JsonConverter(typeof(ComboJsonConverter))]
 public class Combo
@@ -23,11 +24,6 @@ public sealed class ComboJsonConverter : JsonConverter<Combo>
     {
         using var document = JsonDocument.ParseValue(ref reader);
         var root = document.RootElement;
-
-        if (root.ValueKind != JsonValueKind.Object)
-        {
-            throw new JsonException("Expected JSON object for Combo.");
-        }
 
         return new Combo
         {

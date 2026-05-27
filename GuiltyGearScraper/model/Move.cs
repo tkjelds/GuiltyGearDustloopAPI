@@ -50,6 +50,6 @@ public class Move
         public string? Name { get; set; }
 
         [JsonExtensionData]
-        public IDictionary<string, JsonElement> UnmatchedFields {get; set;} 
+        public IDictionary<string, JsonElement>? UnmatchedFields {get; set;} 
     }
 
