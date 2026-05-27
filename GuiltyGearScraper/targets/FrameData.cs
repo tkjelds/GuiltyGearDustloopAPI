@@ -6,26 +6,33 @@ class FrameData
 {
     // Input CharacterName
     // Output json frame data
-    public string frameDataTableToJson(IElement tableBody, IElement tableHead)
+    public List<Dictionary<string,string>> ParseFrameDataTable(IHtmlCollection<IElement>? tables)
     {
-        
+        if(tables == null) return [];
         var moves = new List<Dictionary<string,string>>();
-        var headTags = tableHead.QuerySelectorAll("th").Select(th => th.TextContent.Trim()).Where(th => th != "").ToArray();
-
-        var rows = tableBody.QuerySelectorAll("tr");
-        foreach (var row in rows)
+        foreach (var table in tables)
         {
-            var move = new Dictionary<string, string>();
-            var moveData = row.QuerySelectorAll("td").Select(td => td.TextContent.Trim()).Skip(1).ToArray();
+            var head = table.QuerySelector("thead")!;
+            var body = table.QuerySelector("tbody")!;
+            var headTags = head.QuerySelectorAll("th").Select(th => th.TextContent.Trim()).Where(th => th != "").ToArray();
 
-            for (int i = 0; i < headTags.Count(); i++)
-{
-                move[headTags[i]] = moveData[i];
+            var rows = body.QuerySelectorAll("tr");
+            foreach (var row in rows)
+            {
+                var move = new Dictionary<string, string>();
+                var moveData = row.QuerySelectorAll("td").Select(td => td.TextContent.Trim()).Skip(1).ToArray();
+
+                for (int i = 0; i < headTags.Length; i++)
+    {
+                    move[headTags[i]] = moveData[i];
+                }
+
+                moves.Add(move);
             }
 
-            moves.Add(move);
         }
-        return JsonSerializer.Serialize(moves);
+
+        return moves;
     }
 
 }
